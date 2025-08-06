@@ -1,97 +1,81 @@
-index.html
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sureway Smart Fuel Africa</title>
-
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
-
-  <!-- PWA Support -->
-  <link rel="icon" href="icon.png" />
-  <link rel="apple-touch-icon" href="icon.png" />
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js');
-      });
-    }
-  </script>
-
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 1em;
-      background: #f5f5f5;
+      background-color: #f2f2f2;
       color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
-    h1 {
-      color: #006400;
+    header {
+      background-color: #004080;
+      color: #fff;
+      padding: 1em;
     }
-    .section {
-      margin-bottom: 20px;
+    header img {
+      max-height: 80px;
+      vertical-align: middle;
     }
-    .section-title {
-      font-weight: bold;
-      margin-bottom: 10px;
+    header h1 {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 1.5em;
+      vertical-align: middle;
     }
-    .btn {
-      background: #006400;
+    section {
+      padding: 2em;
+    }
+    .button {
+      background-color: #004080;
       color: white;
-      padding: 10px 15px;
+      padding: 1em 2em;
+      margin: 1em;
       border: none;
       border-radius: 5px;
+      font-size: 1em;
       cursor: pointer;
-      margin-right: 10px;
     }
-    .btn:hover {
-      background: #004d00;
+    .button:hover {
+      background-color: #003060;
     }
-    .footer {
-      margin-top: 30px;
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 1em;
       font-size: 0.9em;
-      color: #888;
     }
   </style>
 </head>
-
 <body>
-  <h1>Sureway Smart Fuel Africa</h1>
 
-  <div class="section">
-    <div class="section-title">Partner Filling Stations</div>
-    <button class="btn">TotalEnergies</button>
-    <button class="btn">AA Rano</button>
-    <button class="btn">Alasela</button>
-  </div>
+  <header>
+    <img src="https://raw.githubusercontent.com/sureways739-art/Sureway73/main/logo.png" alt="Company Logo" />
+    <h1>Sureway Smart Fuel Africa</h1>
+  </header>
 
-  <div class="section">
-    <div class="section-title">Fuel Type</div>
-    <button class="btn">CNG</button>
-    <button class="btn">Petrol</button>
-    <button class="btn">Diesel</button>
-    <button class="btn">Kerosene</button>
-  </div>
+  <section>
+    <h2>Partner Filling Stations</h2>
+    <p>TotalEnergies • AA Rano • Alasela</p>
 
-  <div class="section">
-    <div class="section-title">Predict Fuel Demand</div>
-    <button class="btn">Check Demand</button>
-  </div>
+    <h2>Fuel Type</h2>
+    <p>CNG • Petrol • Diesel • Kerosene</p>
 
-  <div class="section">
-    <div class="section-title">Book Fuel</div>
-    <button class="btn">Book Now</button>
-  </div>
+    <button class="button" onclick="alert('Predicting fuel demand...')">Check Demand</button>
+    <button class="button" onclick="alert('Booking fuel...')">Book Now</button>
+  </section>
 
-  <div class="footer">
-    Sureway Integrated Technology Solutions Limited<br />
-    RC: 8481374
-  </div>
+  <footer>
+    Sureway Integrated Technology Solutions Ltd - RC: 8481374<br/>
+    Powered by Sureway Integrated Tech & Hosted via GitHub<br/>
+    &copy; 2025 Smart Fuel Africa. All rights reserved.
+  </footer>
+
 </body>
 </html>
-
