@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,74 +7,116 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      color: #333;
       margin: 0;
       padding: 0;
-      text-align: center;
+      background: #f2f2f2;
     }
     header {
-      background-color: #004080;
-      color: #fff;
-      padding: 1em;
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
     header img {
-      max-height: 80px;
-      vertical-align: middle;
+      height: 60px;
     }
-    header h1 {
-      display: inline-block;
-      margin-left: 10px;
-      font-size: 1.5em;
-      vertical-align: middle;
+    h1 {
+      margin: 10px 0 0;
     }
-    section {
-      padding: 2em;
+    main {
+      padding: 20px;
     }
-    .button {
-      background-color: #004080;
+    .section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label, select, input, button {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #004080;
       color: white;
-      padding: 1em 2em;
-      margin: 1em;
       border: none;
-      border-radius: 5px;
-      font-size: 1em;
       cursor: pointer;
+      border-radius: 5px;
     }
-    .button:hover {
-      background-color: #003060;
+    button:hover {
+      background: #0066cc;
     }
     footer {
-      background-color: #222;
-      color: #ccc;
-      padding: 1em;
-      font-size: 0.9em;
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="https://raw.githubusercontent.com/sureways739-art/Sureway73/main/logo.png" alt="Company Logo" />
+    <!-- Replace 'logo.png' with your actual logo file name in GitHub -->
+    <img src="logo.png" alt="Sureway Logo" />
     <h1>Sureway Smart Fuel Africa</h1>
   </header>
 
-  <section>
-    <h2>Partner Filling Stations</h2>
-    <p>TotalEnergies • AA Rano • Alasela</p>
+  <main>
+    <div class="section">
+      <h2>Partner Filling Stations</h2>
+      <p>TotalEnergies, AA Rano, Alasela</p>
+    </div>
 
-    <h2>Fuel Type</h2>
-    <p>CNG • Petrol • Diesel • Kerosene</p>
+    <div class="section">
+      <h2>Fuel Type & Quantity</h2>
+      <label for="fuelType">Fuel Type</label>
+      <select id="fuelType">
+        <option value="cng">CNG (KG)</option>
+        <option value="petrol">Petrol</option>
+        <option value="diesel">Diesel</option>
+        <option value="kerosene">Kerosene</option>
+      </select>
 
-    <button class="button" onclick="alert('Predicting fuel demand...')">Check Demand</button>
-    <button class="button" onclick="alert('Booking fuel...')">Book Now</button>
-  </section>
+      <label for="litres">Enter Quantity (Litres or KG)</label>
+      <input type="number" id="litres" placeholder="E.g. 10, 20, 50" />
+
+      <button onclick="predictDemand()">Check Demand</button>
+      <p id="predictionResult"></p>
+    </div>
+
+    <div class="section">
+      <h2>Book Fuel</h2>
+      <button onclick="bookFuel()">Book Now</button>
+      <p id="bookingMessage"></p>
+    </div>
+  </main>
 
   <footer>
-    Sureway Integrated Technology Solutions Ltd - RC: 8481374<br/>
-    Powered by Sureway Integrated Tech & Hosted via GitHub<br/>
-    &copy; 2025 Smart Fuel Africa. All rights reserved.
+    Sureway Integrated Technology Solutions Limited — RC: 8481374
   </footer>
 
+  <script>
+    function predictDemand() {
+      const fuelType = document.getElementById("fuelType").value;
+      const litres = document.getElementById("litres").value;
+      const message = `Predicting demand for ${litres}L of ${fuelType.toUpperCase()}...`;
+      document.getElementById("predictionResult").textContent = message;
+    }
+
+    function bookFuel() {
+      const litres = document.getElementById("litres").value;
+      if (litres === "") {
+        alert("Please enter the quantity before booking.");
+        return;
+      }
+      const confirmation = `Thank you! Your booking of ${litres} litres has been received.`;
+      document.getElementById("bookingMessage").textContent = confirmation;
+    }
+  </script>
 </body>
 </html>
